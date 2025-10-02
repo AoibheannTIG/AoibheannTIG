@@ -20,7 +20,7 @@ fi
 mkdir -p ../build/${CIRCUIT_NAME}
 
 echo "=== Step 1: Compiling the circuit ==="
-../../../../../circom/target/release/circom "$CIRCUIT_FILE" --r1cs --wasm --sym -o ../build/${CIRCUIT_NAME}
+../../../../../circom/target/release/circom "$CIRCUIT_FILE" --r1cs --wasm --sym --O2 -o ../build/${CIRCUIT_NAME}
 if [ $? -ne 0 ]; then 
     echo "Error: Circuit compilation failed"
     exit 1
